@@ -44,6 +44,7 @@ namespace leetCode
     {
         public string LongestCommonPrefix(string[] strs)
         {
+            Array.Sort(strs);
             string prefix = strs[0];
             for (int i = 1; i < strs.Length; i++)
             {
