@@ -7,7 +7,5 @@ using leetCode;
 //Console.WriteLine(asd.IndexOf(prefix));
 
 _20 _20 = new _20();
-_20.IsValid("()[]{}");
 
-Console.WriteLine(_20.IsValid("()[]{}"));
-Console.WriteLine(_20.IsValid("(){}}{"));
+Console.WriteLine(_20.IsValid("([}}])"));
