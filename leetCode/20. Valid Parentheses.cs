@@ -62,6 +62,7 @@ namespace leetCode
         public bool IsValid(string s)
         {
             if (s.Length % 2 != 0) return false;
+            if (s[0] == ')' || s[0] == '}' || s[0] == ']') return false;
             Stack<char> stack = new Stack<char>();
             foreach (char c in s)
             {
@@ -71,11 +72,9 @@ namespace leetCode
                 }
                 else
                 {
-                    char top = stack.Peek();
-
-                    if ((c == ')' && stack.Count != 0 && top == '(') ||
-                        (c == '}' && stack.Count != 0 && top == '{') ||
-                        (c == ']' && stack.Count != 0 && top == '['))
+                    if ((c == ')' && stack.Count != 0 && stack.Peek() == '(') ||
+                        (c == '}' && stack.Count != 0 && stack.Peek() == '{') ||
+                        (c == ']' && stack.Count != 0 && stack.Peek() == '['))
                     {
                         stack.Pop();
                     }
